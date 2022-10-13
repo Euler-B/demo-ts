@@ -6,10 +6,19 @@
   "repository": "git@github.com:Euler-B/demo-ts.git",
   "author": "@euler-b <eduardojosebb.matescience@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "tsNode": "cd src && ts-node index.ts",
+    "start": "nodemon",
+    "transpilation": "tsc",
+    "build:prod": "rimraf ./build && tsc",
+    "start:prod": "yarn run build:prod && node build/index.js"
+  },
   "devDependencies": {
     "@types/node": "^18.8.5",
     "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
     "typescript": "^4.8.4"
   }
 }
