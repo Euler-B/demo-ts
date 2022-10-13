@@ -1,25 +1,11 @@
 {
   "name": "demo-ts",
   "version": "1.0.0",
-  "description": "Example project for development in TS",
+  "description": "Example project for development with TS",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Euler-B/demo-ts.git"
-  },
-  "keywords": [
-    "typescript",
-    "ts"
-  ],
-  "author": "@euler-b",
+  "repository": "git@github.com:Euler-B/demo-ts.git",
+  "author": "@euler-b <eduardojosebb.matescience@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Euler-B/demo-ts/issues"
-  },
-  "homepage": "https://github.com/Euler-B/demo-ts#readme",
   "devDependencies": {
     "@types/node": "^18.8.5",
     "nodemon": "^2.0.20",
