@@ -35,5 +35,61 @@ c = 193;
 
 
 // Tipos de datos mas complejos, al igual que en JS, se pasan por referencia y no por valor 
+//Lista de cadena de texto
 let lista: string[] = ["one", "four", "eleven"];
-let valores: (string | number | boolean)[] = [true, 3, "who i am"]
+//Combinacion de tipos de datos
+let valores: (string | number | boolean)[] = [true, 3, "who i am"];
+//Enumerados 
+enum Estados {
+    "Completado",
+    "Incompleto",
+    "Pendiente"
+};
+let estado: Estados = Estados.Incompleto;
+enum PuestoCarrera {
+    "Primero" = 1,
+    "Segundo",
+    "Tercero",
+};
+let puesto: PuestoCarrera = PuestoCarrera.Tercero;
+
+//Interfaces 
+interface Tarea {
+    nombre: string,
+    estado: Estados,    
+    urgencia: number
+}; 
+ //A patir de aqui puedo crear objetos que implementen la interfaz Tarea
+
+let tarea1: Tarea = {
+    nombre: "Tarea 1",
+    estado: Estados.Pendiente,
+    urgencia: 10
+};
+//Types de Typescript
+type Producto = {
+    nombre: string,
+    precio: number,
+    anio: number
+};
+
+let coche: Producto = {
+    nombre: "Mercedes Benz",
+    precio: 154000,
+    anio: 1999
+};
+console.log(coche.anio < 2010 ? `Coche: ${coche.nombre} es antiguo` : `Coche: ${coche.nombre} es nuevo`); //<-- A esto se le denomina operacion ternaria
+//If - else
+if (error) {
+    console.log("Hay un Error");
+}else {
+    console.log("No hay error");
+};
+//if - else if - else
+if(coche.anio < 2010) {
+    console.log(`Coche: ${coche.nombre} es antiguo`);
+} else if (coche.anio === 2010) {
+    console.log(`Coche: ${coche.nombre} es del 2010`);
+} else {
+    console.log(`Coche: ${coche.nombre} es nuevo`);
+};
