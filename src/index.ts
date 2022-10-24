@@ -66,6 +66,52 @@ let tarea1: Tarea = {
     estado: Estados.Pendiente,
     urgencia: 10
 };
+console.log(`Tarea: ${tarea1.nombre}`);
+
+// Asignación múltiple de variables
+
+let miTarea = {
+    titulo: 'Mi tarea',
+    estado: Estados.Completado,
+    urgencia: 1
+}
+
+// Declaración 1 a 1
+let miTitulo = miTarea.titulo;
+let miEstado = miTarea.estado;
+let miUrgencia = miTarea.urgencia;
+
+// ** Factor Spread (Propagación)
+
+// En asignación de variables
+let {titulo, estado, urgencia } = miTarea;
+
+// En listas
+let listaCompraLunes: string[] = ["Leche", "Patatas"]
+let listaCompraMartes: string[] = [...listaCompraLunes, "Pan", "Huevos"];
+let listaCompraMiercoles: string[] = ["Carne", "Pescado"]
+let listaCompraSemana = [...listaCompraLunes, ...listaCompraMiercoles]
+
+// En Objetos
+
+let estadoApp = {
+    usuario: "admin",
+    session: 3,
+    jwt: "Bearer1283612783"
+}
+
+// Cambiar un valor por propagación
+let nuevoEstado = {
+    ...estadoApp,
+    session: 4
+}
+
+let edad = 4;
+
+let estudiante = {
+    nombre : "Martín",
+    edad // edad: edad
+}
 //Types de Typescript
 type Producto = {
     nombre: string,
@@ -93,3 +139,69 @@ if(coche.anio < 2010) {
 } else {
     console.log(`Coche: ${coche.nombre} es nuevo`);
 };
+
+// Switch
+switch (tarea1.estado) {
+    case Estados.Completado:
+        console.log("La tarea está completada");
+        break;
+    case Estados.Incompleto:
+        console.log("La tarea no está completada");
+        break;
+    case Estados.Pendiente:
+        console.log("La tarea está pendiente de comprobarse");
+        break;
+    default:
+        break;
+}
+
+
+// ** Bucles
+
+let listaTareasNueva: Tarea[] = [
+    {
+        nombre: "Tarea 1",
+        estado: Estados.Completado,
+        urgencia: 2
+    },
+    {
+        nombre: "Tarea 2",
+        estado: Estados.Pendiente,
+        urgencia: 0
+    },
+    {
+        nombre: "Tarea 3",
+        estado: Estados.Completado,
+        urgencia: 15
+    }
+]
+
+// For Clásico
+for (let index = 0; index < listaTareasNueva.length; index++) {
+    const tarea = listaTareasNueva[index];
+    console.log(`${index} - ${tarea.nombre}`);
+}
+
+// Foreach    
+listaTareasNueva.forEach(
+    (tarea: Tarea, index: number) => {
+        console.log(`${index} - ${tarea.nombre}`);
+    }
+);
+
+
+// Bucles While
+while (tarea1.estado !== Estados.Completado) {
+    if(tarea1.urgencia == 20){
+        tarea1.estado = Estados.Completado;
+        break;
+    }else{
+        tarea1.urgencia ++;
+    }
+}
+
+// DO While ( se ejecuta al menos una vez)
+do {
+    tarea1.urgencia ++;
+    tarea1.estado = Estados.Completado;
+} while (tarea1.estado !== Estados.Completado);
