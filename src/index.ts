@@ -45,7 +45,7 @@ enum Estados {
     "Incompleto",
     "Pendiente"
 };
-let estado: Estados = Estados.Incompleto;
+let state: Estados = Estados.Incompleto;
 enum PuestoCarrera {
     "Primero" = 1,
     "Segundo",
