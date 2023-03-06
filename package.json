@@ -14,7 +14,7 @@
     "start:prod": "yarn run build:prod && node build/index.js"
   },
   "devDependencies": {
-    "@types/node": "^18.14.2",
+    "@types/node": "^18.14.6",
     "nodemon": "^2.0.21",
     "rimraf": "^4.3.1",
     "ts-node": "^10.9.1",
