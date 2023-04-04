@@ -19,6 +19,6 @@
     "rimraf": "^4.4.0",
     "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   }
 }
